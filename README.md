@@ -1,6 +1,6 @@
 # SimpleImport
 
-Sublime Text plugin which adds python import statement to the beginning of the current file for selected classes and method definitions
+Sublime Text plugin which adds python import statement to the beginning of the current file for selected classes and methods
 
 # Dependencies
 
