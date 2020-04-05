@@ -43,5 +43,15 @@ For example, let's say you have a file located in the following path: `$ABSOLUTE
 
 # Usage
 
-1. Highlight the class or method that you want to import
+1. Highlight a selected dependency by double clicking 
+```
+# e.g. double click math
+    rounded = math.ceil(total)
+```
 2. Press `cmd+d` 
+3. Scroll up to the top of the file to verify
+```
+# should see the following
+import math
+```
+```
