@@ -1,0 +1,5 @@
+[
+    {
+        "keys": ["super+d"], "command": "example"
+    }
+]
