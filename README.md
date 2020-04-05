@@ -28,3 +28,8 @@ If you have a resource at $ABSOLUTE_PATH_PROJECT_DIRECTORY/src/folder_a/folder_b
   "search_paths": [$ABSOLUTE_PATH_PROJECT_DIRECTORY/src]
 } 
 ```
+
+# Usage
+
+1. Highlight the class or method that you want to import
+2. Press `cmd+d` 
