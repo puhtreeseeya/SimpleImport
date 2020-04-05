@@ -8,7 +8,7 @@ Sublime Text plugin which adds python import statement to the beginning of the c
 
 # Dependencies
 
-This plugin requires `ripgrep` which you can install following the instructions here: https://github.com/BurntSushi/ripgrep#installation
+This plugin requires `ripgrep` which can be installed following the instructions here: https://github.com/BurntSushi/ripgrep#installation
 
 # Installation
 
