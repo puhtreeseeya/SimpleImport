@@ -2,6 +2,10 @@
 
 Sublime Text plugin which adds python import statement to the beginning of the current file for selected classes and methods
 
+# Supported Languages
+
+Python
+
 # Dependencies
 
 This plugin requires `ripgrep` which you can install following the instructions here: https://github.com/BurntSushi/ripgrep#installation
