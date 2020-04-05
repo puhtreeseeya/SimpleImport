@@ -6,13 +6,19 @@ import subprocess
 
 class SimpleImportCommand(sublime_plugin.TextCommand):
     def run(self, edit):
+        selected = self.view.substr(self.view.sel()[0])
+        current_file = self.view.file_name()
         settings = sublime.load_settings("SimpleImport.sublime-settings")
-        root_path = settings.get('root_path', '')
-        search_paths = settings.get('search_paths', [])
+        config = settings.get('config', {})
+        root_path = ''
+        for key, value in config.items():
+            if key in current_file:
+                root_path = key
+                break
         if not root_path:
             return
-        selected = self.view.substr(self.view.sel()[0])
-        search = '(def|class) '+selected+'\('
+        omit_path_prefixes = config[root_path]['omit_path_prefixes']
+        search = u'(def|class) '+selected+u'\('
         out = subprocess.Popen(['rg', '-r', '-i', search, root_path], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout,stderr = out.communicate()
         stdout_str = stdout.decode('utf-8')
@@ -24,7 +30,7 @@ class SimpleImportCommand(sublime_plugin.TextCommand):
         filepath = re.sub(r'[\.].*', '', stdout_str)
         trunc_filepath = ''
         idx = 0
-        for path in search_paths:
+        for path in omit_path_prefixes:
             if path in filepath:
                 if len(path) > idx:
                     idx = len(path)+1
