@@ -19,18 +19,26 @@ To enable this plugin do the following:
 4. Replace the file with the following contents 
 ```
 {
-    "root_path": $ABSOLUTE_PATH_PROJECT_DIRECTORY,
-    "search_paths": []
+    "config": {
+        "$ABSOLUTE_PATH_PROJECT_DIRECTORY" : {
+            "omit_path_prefixes": []
+        },
+    }
 }
-```
-5. If you want to omit a directory from the import path then add the directory to search_paths. 
 
-If you have a resource at $ABSOLUTE_PATH_PROJECT_DIRECTORY/src/folder_a/folder_b/example.py and the desired import statement is this format `from folder_a.folder_b import example`, then add the absolute path to the src folder into `search_paths`. It should look like the following:
+```
+5. `omit_path_prefixes` is used to disregard directories from the import statement
+
+For example, let's say you have a file located in the following path: `$ABSOLUTE_PATH_PROJECT_DIRECTORY/src/folder_a/folder_b/example.py` Without any changes the import statement will be the following format: `from src.folder_a.folder_b.example import selected`. If you want the imports to be `from folder_a.folder_b.example import selected` then add the absolute path of the `src` directory into `omit_path_prefixes` as such: 
+
 ```
 {
-  "root_path": $ABSOLUTE_PATH_PROJECT_DIRECTORY,
-  "search_paths": [$ABSOLUTE_PATH_PROJECT_DIRECTORY/src]
-} 
+    "config": {
+        "$ABSOLUTE_PATH_PROJECT_DIRECTORY" : {
+            "omit_path_prefixes": ["$ABSOLUTE_PATH_PROJECT_DIRECTORY/src"]
+        },
+    }
+}
 ```
 
 # Usage
