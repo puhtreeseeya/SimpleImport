@@ -1,5 +1,5 @@
 [
     {
-        "keys": ["super+d"], "command": "example"
+        "keys": ["super+d"], "command": "simple_import"
     }
 ]
