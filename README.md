@@ -4,7 +4,7 @@ Sublime Text plugin which adds python import statement to the beginning of the c
 
 # Supported Languages
 
-Python
+* Python
 
 # Dependencies
 
